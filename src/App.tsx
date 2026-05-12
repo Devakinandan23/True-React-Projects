@@ -1,34 +1,38 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <>
+    <PostComponent/>
+  )
+}
+
+const style = {width: 200, backgroundColor: "white",borderRadius: 10, borderColor: "grey", borderWidth: 1, display: 'flex'}
+
+function PostComponent(){
+  return(
+    <div>
+    <div style={style}>
+      <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgefRCjyJXImBNPsYx6sHsdWoEjWkEDizQSWBhzaIUwOEonRyv0SCgMxVKUnD9hnjsB_ldVSbbcYBpCRGWvHuRfDseflFV2GgvgawB4sTdBQ&s=10' style={{
+        height: 100,
+        width: 100,
+        borderRadius: 50
+      }}/>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div style={{fontSize: 17}}>
+        <b>Manik Khajuria</b>
       </div>
-      <h1>Vite + React This is new</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div >GSoC’26 @Fossasia | NITJ’28 | 100xDevs </div>
+      <div>11h • Edited</div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
+    <div>𝐌𝐢𝐧𝐝 𝐁𝐥𝐨𝐰𝐧 𝐌𝐲 𝐀𝐈 𝐂𝐡𝐚𝐭 𝐉𝐮𝐬𝐭 𝐅𝐞𝐥𝐭 𝐇𝐮𝐦𝐚𝐧?
+
+    Okay, seriously, has anyone else had an AI interaction lately that just made you do a double take? I was just chatting with an AI, and for a moment there, it felt incredibly human. The way it understood context, responded with surprising nuance, and even seemed to anticipate my next question was genuinely wild.
+</div>
+    </div>
   )
 }
 
