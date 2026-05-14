@@ -5,7 +5,16 @@ function App() {
 
 
   return (
-    <PostComponent/>
+    <div style={{backgroundColor: 'gray'}}>
+      <div style={{gap: 10}}>
+      <div style={{marginBottom: 10}}>
+        <PostComponent/>
+      </div>
+      <div>
+        <PostComponent/>
+      </div>
+      </div>
+    </div>
   )
 }
 
