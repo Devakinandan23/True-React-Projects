@@ -1,14 +1,50 @@
 import { useState } from 'react'
 
+interface Post
+{
+  name: string, 
+  subtitle: string, 
+  time: string, 
+  content: string
+}
+
+
 
 function App() {
+  const [post,setPost] = useState<Post[]>([]);
+
+  
+
+  const posts = post.map(post =>
+    <div>
+      <PostComponent name={post.name} subtitle={post.subtitle} time={post.time} content={post.content}/>
+    </div>
+  )
+
+    function AddPost() {
+      setPost([...post,{
+        name: "Manik Khajuria",
+        subtitle:  "GSoC’26 @Fossasia | NITJ’28 | 100xDevs",
+        time:  "11h • Edited",
+        content: "𝐌𝐢𝐧𝐝 𝐁𝐥𝐨𝐰𝐧 𝐌𝐲 𝐀𝐈 𝐂𝐡𝐚𝐭 𝐉𝐮𝐬𝐭 𝐅𝐞𝐥𝐭 𝐇𝐮𝐦𝐚𝐧? Okay, seriously, has anyone else had an AI interaction lately that just made you do a double take? I was just chatting with an AI, and for a moment there, it felt incredibly human. The way it understood context, responded with surprising nuance, and even seemed to anticipate my next question was genuinely wild."
+      }])
+    }
+
+
+  
+  
 
 
   return (
     <div style={{backgroundColor: '#dfe6e9', height: '100vh'}}>
-      <button>Add New</button>
+      <button onClick={AddPost}>Add New</button>
       <div style={{display: 'flex',justifyContent: 'center'}}>
-        <PostComponent/>
+        {/* <div>
+        <PostComponent name={'dlfkjdlfj'} subtitle='hulalal' time='11:00' content='new content'/>
+        </div> */}
+        <div>
+         {posts}
+        </div>
       </div>
       </div>
   )
@@ -16,13 +52,13 @@ function App() {
 
 const style = { width: 300, backgroundColor: "white",borderRadius: 10, borderColor: "grey", borderWidth: 1, padding: 10}
 
-function PostComponent(){
+function PostComponent({name, subtitle, time, content}:Post){
   return(
   <div >
     <div style={style}>
       <div style={{display: 'flex', marginTop: 10}}>
         
-          <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgefRCjyJXImBNPsYx6sHsdWoEjWkEDizQSWBhzaIUwOEonRyv0SCgMxVKUnD9hnjsB_ldVSbbcYBpCRGWvHuRfDseflFV2GgvgawB4sTdBQ&s=10' style={{
+          <img src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgefRCjyJXImBNPsYx6sHsdWoEjWkEDizQSWBhzaIUwOEonRyv0SCgMxVKUnD9hnjsB_ldVSbbcYBpCRGWvHuRfDseflFV2GgvgawB4sTdBQ&s=10'} style={{
             height: 80,
             width: 80,
             borderRadius: 40,
@@ -31,17 +67,15 @@ function PostComponent(){
         
         <div>
           <div style={{fontSize: 14}}>
-            <b>Manik Khajuria</b>
+            <b>{name}</b>
           </div>
-          <div style={{fontSize: 14}}>GSoC’26 @Fossasia | NITJ’28 | 100xDevs </div>
-          <div style={{fontSize: 14}}>11h • Edited</div>
+          <div style={{fontSize: 14}}>{subtitle}</div>
+          <div style={{fontSize: 14}}>{time}</div>
         </div>
       </div>
       
         <div style={{fontSize: 14}}>
-          𝐌𝐢𝐧𝐝 𝐁𝐥𝐨𝐰𝐧 𝐌𝐲 𝐀𝐈 𝐂𝐡𝐚𝐭 𝐉𝐮𝐬𝐭 𝐅𝐞𝐥𝐭 𝐇𝐮𝐦𝐚𝐧?
-
-        Okay, seriously, has anyone else had an AI interaction lately that just made you do a double take? I was just chatting with an AI, and for a moment there, it felt incredibly human. The way it understood context, responded with surprising nuance, and even seemed to anticipate my next question was genuinely wild.
+          {content}
         </div>
     </div>
   </div>
