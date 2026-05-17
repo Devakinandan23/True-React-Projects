@@ -8,12 +8,8 @@ interface Post
   content: string
 }
 
-
-
 function App() {
   const [post,setPost] = useState<Post[]>([]);
-
-  
 
   const posts = post.map(post =>
     <div>
@@ -21,19 +17,14 @@ function App() {
     </div>
   )
 
-    function AddPost() {
+function AddPost() {
       setPost([...post,{
         name: "Manik Khajuria",
         subtitle:  "GSoC’26 @Fossasia | NITJ’28 | 100xDevs",
         time:  "11h • Edited",
         content: "𝐌𝐢𝐧𝐝 𝐁𝐥𝐨𝐰𝐧 𝐌𝐲 𝐀𝐈 𝐂𝐡𝐚𝐭 𝐉𝐮𝐬𝐭 𝐅𝐞𝐥𝐭 𝐇𝐮𝐦𝐚𝐧? Okay, seriously, has anyone else had an AI interaction lately that just made you do a double take? I was just chatting with an AI, and for a moment there, it felt incredibly human. The way it understood context, responded with surprising nuance, and even seemed to anticipate my next question was genuinely wild."
       }])
-    }
-
-
-  
-  
-
+}
 
   return (
     <div style={{backgroundColor: '#dfe6e9', height: '100vh'}}>
